@@ -17,11 +17,9 @@
 
 package ai.h2o.sparkling.backend.api.rdds
 
-import ai.h2o.sparkling.{H2OConf, H2OContext, H2OFrame}
 import ai.h2o.sparkling.backend.api.{ServletBase, ServletRegister}
 import ai.h2o.sparkling.utils.SparkSessionUtils
-import javax.servlet.Servlet
-import javax.servlet.http.{HttpServletRequest, HttpServletResponse}
+import ai.h2o.sparkling.{H2OConf, H2OContext, H2OFrame}
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.Row
@@ -29,6 +27,10 @@ import org.apache.spark.sql.catalyst.ScalaReflection
 import org.apache.spark.sql.catalyst.ScalaReflection.universe._
 import org.apache.spark.sql.types.{StructField, StructType}
 import water.exceptions.H2ONotFoundArgumentException
+
+import javax.servlet.Servlet
+import javax.servlet.http.{HttpServletRequest, HttpServletResponse}
+import scala.reflect.ClassTag
 
 /**
   * This servlet class handles requests for /3/RDDs endpoint
